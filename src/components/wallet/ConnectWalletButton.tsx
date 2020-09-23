@@ -12,25 +12,21 @@ interface DispatchFromProps {
 type Props = StateFromProps & DispatchFromProps;
 
 const ConnectWalletButton: React.FC<Props> = ({ loadAccount }: Props) => {
-  const [isMobile, setMobile] = React.useState<boolean>(false);
-  React.useEffect(() => {
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(window.navigator.userAgent)) {
-      setMobile(true);
-    }
-  }, []);
+  // const [isMobile, setMobile] = React.useState<boolean>(false);
+  // React.useEffect(() => {
+  //   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(window.navigator.userAgent)) {
+  //     setMobile(true);
+  //   }
+  // }, []);
 
-  return !isMobile ? (
+  return (
     <Button
       variant='contained'
-      className='btn-header'
+      className='btn-primary'
       onClick={loadAccount}
     >
       Connect Wallet
     </Button>
-  ) : (
-    <div className='text-error'>
-      Go to desktop and connect Metamask
-    </div>
   )
 }
 
