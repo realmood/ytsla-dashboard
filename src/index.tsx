@@ -17,6 +17,8 @@ const { store } = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>
+        <div className="stars"></div>
+        <div className="twinkling"></div>
         <MainScreen />
     </Provider>,
     document.getElementById("root")
