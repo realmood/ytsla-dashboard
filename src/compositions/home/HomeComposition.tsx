@@ -98,11 +98,11 @@ export const HomeComposition = ({ account, totalSupply, rebase }: Props) => {
             />
             {Config.Token.rebase.paused ? (
               <div className='mb-10 center-h'>
-                <span className='text-error'>We didn't start rebase yet.</span>
+                <span className='text-error'>We didn't start rebase yet...</span>
               </div>
             ) : null}
             <div className='center-h'>
-              <Button variant='contained' className='btn-primary widebutt' disabled={(Config.Token.rebase.paused || !rebaseEnable)} onClick={rebase}>Rebase</Button>
+              <Button variant='contained' className='btn-primary widebutt' disabled={(Config.Token.rebase.paused || !rebaseEnable)} onClick={rebase}>wen rebase?</Button>
             </div>
           </div>
         </div>
