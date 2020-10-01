@@ -53,7 +53,7 @@ const Pool1Stats = ({ tokenPrice, account }: Props) => {
     <React.Fragment>
       <h2 className='mb-20 ystatstitle'>{Config.MemeToken.name} staking pool</h2>
 	    <div className='cardoutline'>
-        <div className='ystatshead'>PRICES <span className='ybullets'> • • • • • • • • • • • • • • • • • • • • • • • • • •</span></div>
+        <div className='ystatshead'>PRICES <span className='ybullets'> • • • • • • • • • • • • • • • • • • • • </span></div>
 	      <div className='flex-h'>
           <div className='datasplit'>{`1 ${Config.MemeToken.symbol} =`}</div>
 	        <div className='blackdata'> {`$ ${numberWithDecimals(token1Price, 0, 2)}`}</div>
@@ -63,7 +63,7 @@ const Pool1Stats = ({ tokenPrice, account }: Props) => {
 	        <div className='blackdata'> {`$ ${numberWithDecimals(tokenPrice, 0, 2)}`}</div>
 	      </div>
         <br/>
-        <div className='ystatshead'>STAKING <span className='ybullets'> • • • • • • • • • • • • • • • • • • • • • • • • • •</span></div>	 
+        <div className='ystatshead'>STAKING <span className='ybullets'> • • • • • • • • • • • • • • • • • • • </span></div>	 
 	      <div className='flex-h'>
           <div className='datasplit'>
             There are total &nbsp;
@@ -85,7 +85,7 @@ const Pool1Stats = ({ tokenPrice, account }: Props) => {
           </div>
 	      </div>
         <br/>
-	      <div className='ystatshead'>{Config.Token.symbol} REWARDS <span className='ybullets'> • • • • • • • • • • • • • • • • • • •</span></div>
+	      <div className='ystatshead'>{Config.Token.symbol} REWARDS <span className='ybullets'> • • • • • • • • • • • • • • </span></div>
 	      <div className='flex-h'>
           <div className='datasplit'>{`Claimable rewards`}</div>
           <div className='blackdata'>
