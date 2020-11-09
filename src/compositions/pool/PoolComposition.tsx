@@ -124,6 +124,7 @@ const PoolComposition: React.FC<Props> = ({
           <div className='center-h wp-100 mt-30 home-container'>
             <RewardAsset
               earned={earned}
+              finished={timeLeft <= 0}
               percent={estimatePercent}
               onHarvest={harvest}
             />

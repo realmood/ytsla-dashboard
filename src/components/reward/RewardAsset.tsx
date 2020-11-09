@@ -5,13 +5,14 @@ import { numberWithDecimals } from 'utils';
 
 interface OwnProps {
   earned: number;
+  finished: boolean;
   percent: number;
   onHarvest: () => void;
 }
 
 type Props = OwnProps;
 
-export const RewardAsset = ({ earned, onHarvest, percent }: Props) => {
+export const RewardAsset = ({ earned, finished, onHarvest, percent }: Props) => {
   return (
     <Card className='card card-h medium transparent'>
       <CardContent>
@@ -46,7 +47,7 @@ export const RewardAsset = ({ earned, onHarvest, percent }: Props) => {
               variant='contained'
               className='btn-primary'
               onClick={onHarvest}
-              disabled={earned <= 0}
+              disabled={earned <= 0 || finished}
             >
               Harvest
             </Button>
