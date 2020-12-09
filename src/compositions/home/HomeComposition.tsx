@@ -33,12 +33,12 @@ export const HomeComposition = ({ account, totalSupply, rebase }: Props) => {
     stockclient.getTslaPrice().then(res => setRebaseTokenPrice(res));
     coingeckoclient.getYtslaPrice().then(res => setTokenPrice(res));
   }, [account]);
-  /*useEffect(() => {
+  useEffect(() => {
     const timeInterval = setInterval(() => {
       stockclient.getTslaPrice().then(res => setRebaseTokenPrice(res));
     }, 1800 * 1000);
     return () => clearInterval(timeInterval);
-  });*/
+  });
   const renderTokenInfo = () => (
     <React.Fragment>
 		  <div className='flex-h'>
@@ -89,8 +89,20 @@ export const HomeComposition = ({ account, totalSupply, rebase }: Props) => {
             <div className='center-h greyme' style={{ margin: '20px' }}>
               {`${Config.Token.symbol} Price is $${numberWithDecimals(tokenPrice, 0, 2)}, ${Config.TargetToken.symbol} Price is $${numberWithDecimals(rebaseTokenPrice, 0, 2)}`}
             </div>
+            <Timer
+              started={!Config.Token.rebase.paused}
+              seconds={!Config.Token.rebase.paused ? getTimeLeft(Config.Token.rebase.offset) * 1000 : 0}
+              onEnd={() => setRebaseEnable(true)}
+              onStart={() => setRebaseEnable(false)}
+            />
+            {Config.Token.rebase.paused ? (
+              <div className='mb-10 center-h'>
+                <span className='text-error'>We didn't start rebase yet...</span>
+              </div>
+            ) : null}
+
             <div className='center-h'>
-              <Button variant='contained' className='btn-primary widebutt' disabled={(Config.Token.rebase.paused || !rebaseEnable)} onClick={rebase}>Wen Rebase?</Button>
+              <Button variant='contained' className='btn-primary widebutt' disabled={(Config.Token.rebase.paused || !rebaseEnable)} onClick={rebase}>Rebase</Button>
             </div>
           </div>
         </div>
