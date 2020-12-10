@@ -28,9 +28,6 @@ const Header: React.FC<Props> = ({ account, history, loadAccount }: Props) => {
         </div>
         <div className="flex-h">
           <Button className='btn-text' onClick={() => history.push('/')} >Home</Button>
-          <Button className='btn-text' onClick={() => history.push('/farm')} >Farm</Button>
-          <Button className='btn-text' onClick={() => history.push('/stats')} >Stats</Button>
-		      <Button className='btn-text' onClick={() => history.push('/dashboard')} disabled >Dashboard</Button>
         </div>
         {account ? (
           <Button
