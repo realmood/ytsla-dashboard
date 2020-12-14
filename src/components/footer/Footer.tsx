@@ -12,8 +12,8 @@ const Footer: React.FC = () => {
         </div>
         <Button className='footer-item btn-text' href={`${Config.etherscan}${Config.Token.address}`} target='_blank' >yTSLA Contract</Button>
         <Button className='footer-item btn-text' href='https://app.uniswap.org/#/swap?outputCurrency=0x5322A3556F979cE2180B30e689a9436fDDCB1021' target='_blank' >Uniswap YTSLA-ETH</Button>
-        <Button className='footer-item btn-text' href='https://twitter.com/yTSLAFi' target='_blank' >Twitter</Button>
-        <Button className='footer-item btn-text' href='https://t.me/yTSLA_lounge' target='_blank' >Telegram</Button>
+        <Button className='footer-item btn-text' href='https://twitter.com/darkmattertoken' target='_blank' >Twitter</Button>
+        <Button className='footer-item btn-text' href='https://t.me/darkmattertoken' target='_blank' >Telegram</Button>
       </div>
     </Container>
   )
