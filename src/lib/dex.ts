@@ -34,20 +34,6 @@ const getTokenPrice = async () => {
 };
 
 const getLpTokenPrice = async () => {
-  /*try {
-    const response = await axios({
-      url: `${PROXY}${API_URL}/uniswap/pool?pairSelected=${Config.Uniswap.address}`,
-      method: 'GET',
-      headers: {
-        authorization: `Bearer ${API_KEY}`,
-      }
-    });
-    const ethPrice = await getEthPrice();
-    const totalSupply = await web3client.getTotalSupply(web3client.uniLpTokenContract);
-    return ethPrice * response.data.data.pair.reserve1 / (totalSupply / Math.pow(10, Config.UniLpToken.decimals));
-  } catch(err) {
-    return 137.55;
-  }*/
   const totalSupply = await web3client.getTotalSupply(web3client.uniLpTokenContract);
   const wethBalance = await web3client.getBalance(web3client.wethTokenContract, Config.UniLpToken.address);
   const ethPrice = await coingecko.getEthPrice();
